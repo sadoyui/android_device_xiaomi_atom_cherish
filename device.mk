@@ -33,3 +33,10 @@ PRODUCT_PACKAGES += \
     com.android.ims.rcsmanager \
     PresencePolling \
     RcsService
+
+# Overlay
+PRODUCT_PACKAGES := \
+    FrameworkResOverlay \
+    SystemUIOverlay \
+    SettingsOverlay \
+    TelephonyOverlay \

@@ -59,14 +59,13 @@ TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 # Kernel
 BOARD_KERNEL_SEPARATED_DTBO := false
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/boot/dtbo.img
-TARGET_PREBUILT_DTBIMAGE := $(DEVICE_PATH)/prebuilts/boot/dtb.img
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mt6873
 TARGET_KERNEL_CONFIG := vendor/atom_user_defconfig
 
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -80,19 +79,13 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --kernel_offset $(BOARD_KERNEL_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --base $(BOARD_KERNEL_BASE)
-BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTBIMAGE)
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE) --board ""
 
 BOARD_KERNEL_CMDLINE := \
-    androidboot.console=tty0  \
     androidboot.init_fatal_reboot_target=recovery \
     androidboot.selinux=permissive \
     bootopt=64S3,32N2,64N2 \
-    console=ttyMT3,921600n1 
-
-# Mediatek support
-BOARD_USES_MTK_HARDWARE := true
 
 # Partitions
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false

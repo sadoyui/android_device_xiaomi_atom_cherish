@@ -28,6 +28,7 @@
 #include <poll.h>
 #include <thread>
 #include <unistd.h>
+#include <fcntl.h>
 
 #define COMMAND_NIT 10
 #define PARAM_NIT_FOD 1

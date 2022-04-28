@@ -27,7 +27,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <resources>
     <!-- the padding on the start of the statusbar -->
-    <dimen name="status_bar_padding_start">15dp</dimen>
+    <dimen name="status_bar_padding_start">20dp</dimen>
 
     <!-- the padding on the end of the statusbar -->
     <dimen name="status_bar_padding_end">10dp</dimen>

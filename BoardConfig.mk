@@ -4,13 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-#
-# Copyright (C) 2022 The ArrowOS Project
-#
-# SPDX-License-Identifier: Apache-2.0
-#
-
 DEVICE_PATH := device/xiaomi/atom
+
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Architecture
 TARGET_ARCH := arm64

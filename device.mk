@@ -16,9 +16,14 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+
+# Overlay-remove
+PRODUCT_PACKAGES += \
+    FrameworksResOverlay \
+    FrameworksResOverlayExt
 
 # VNDK
+PRODUCT_TARGET_VNDK_VERSION := 31
 PRODUCT_EXTRA_VNDK_VERSIONS := 30 31
 
 # Soong namespaces

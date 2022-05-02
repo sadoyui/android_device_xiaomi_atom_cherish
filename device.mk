@@ -47,10 +47,6 @@ PRODUCT_PACKAGES += \
 	fstab.mt6873 \
 	perf_profile.sh
 
-# XiaomiParts
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Ims
 PRODUCT_PACKAGES += \
     libem_support_jni \

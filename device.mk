@@ -16,14 +16,13 @@ $(call inherit-product, vendor/xiaomi/atom/atom-vendor.mk)
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-
-# Overlay-remove
+# RRO_Overlays
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
     FrameworksResOverlay \
-    FrameworksResOverlayExt
+    SettingsOverlay \
+    SystemUIOverlay \
+    TelephonyOverlay \
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31

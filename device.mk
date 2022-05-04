@@ -27,7 +27,8 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 30 31
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/xiaomi
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

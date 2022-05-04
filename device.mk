@@ -10,9 +10,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# atom vendor
-$(call inherit-product, vendor/xiaomi/atom/atom-vendor.mk)
-
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
@@ -56,19 +53,6 @@ PRODUCT_PACKAGES += \
 	init.mt6873.rc \
 	fstab.mt6873 \
 	perf_profile.sh
-
-# Ims
-PRODUCT_PACKAGES += \
-    libem_support_jni \
-
-PRODUCT_BOOT_JARS += \
-    mediatek-common \
-    mediatek-framework \
-    mediatek-ims-base \
-    mediatek-ims-common \
-    mediatek-telecom-common \
-    mediatek-telephony-base \
-    mediatek-telephony-common
 
 # RcsService
 PRODUCT_PACKAGES += \

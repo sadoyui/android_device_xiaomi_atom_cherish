@@ -15,11 +15,9 @@ PRODUCT_SHIPPING_API_LEVEL := 29
 
 # RRO_Overlays
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
     FrameworksResOverlay \
     SettingsOverlay \
     SystemUIOverlay \
-    TelephonyOverlay \
 
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31

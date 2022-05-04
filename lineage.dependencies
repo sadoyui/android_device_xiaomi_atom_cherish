@@ -3,4 +3,8 @@
     "repository": "android_kernel_xiaomi_mt6873",
     "target_path": "kernel/xiaomi/mt6873"
   }
+  {
+    "repository": "hardware_xiaomi"
+    "target_path": "hardware/xiaomi"
+  }
 ]

@@ -13,15 +13,22 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
-# RRO_Overlays
-PRODUCT_PACKAGES += \
-    FrameworksResOverlay \
-    SettingsOverlay \
-    SystemUIOverlay \
-
 # VNDK
 PRODUCT_TARGET_VNDK_VERSION := 31
 PRODUCT_EXTRA_VNDK_VERSIONS := 30 31
+
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
+# Overlay -- remove
+PRODUCT_PACKAGES += \
+    CellbroadcastUIResOverlay \
+    FrameworkResOverlay \
+    FrameworkResOverlayExt \
+    SettingsProviderResOverlay \
+    SystemUIResOverlay \
+    WifiResOverlay
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -54,3 +61,8 @@ PRODUCT_PACKAGES += \
 # Permissions
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/permissions/privapp-permissions-mediatek.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-mediatek.xml
+
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-V1-ndk_platform.vendor
+

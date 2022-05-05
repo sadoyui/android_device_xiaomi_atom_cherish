@@ -16,35 +16,61 @@
 
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.3-service"
 
-#include <android-base/logging.h>
+#include <android/log.h>
 #include <hidl/HidlTransportSupport.h>
 
 #include "BiometricsFingerprint.h"
 
+// libhwbinder:
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using android::hardware::biometrics::fingerprint::V2_3::IBiometricsFingerprint;
+// Generated HIDL files
 using android::hardware::biometrics::fingerprint::V2_3::implementation::BiometricsFingerprint;
 
-using android::OK;
 using android::status_t;
 
+status_t BiometricsFingerprint::registerAsSystemService() {
+    status_t ret = 0;
+
+    ret = IBiometricsFingerprint::registerAsService();
+    if (ret != 0) {
+        ALOGE("Failed to register IBiometricsFingerprint (%d)", ret);
+        goto fail;
+    } else {
+        ALOGI("Successfully registered IBiometricsFingerprint");
+    }
+
+    ret = IXiaomiFingerprint::registerAsService();
+    if (ret != 0) {
+        ALOGE("Failed to register IXiaomiFingerprint (%d)", ret);
+        goto fail;
+    } else {
+        ALOGI("Successfully registered IXiaomiFingerprint");
+    }
+
+fail:
+    return ret;
+}
+
 int main() {
-    android::sp<IBiometricsFingerprint> service = new BiometricsFingerprint();
+    android::sp<BiometricsFingerprint> service = nullptr;
 
-    configureRpcThreadpool(1, true);
-
-    status_t status = service->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Cannot register Biometrics 2.3 HAL service.";
+    service = new BiometricsFingerprint();
+    if (service == nullptr) {
+        ALOGE("Instance of BiometricsFingerprint is null");
         return 1;
     }
 
-    LOG(INFO) << "Biometrics 2.3 HAL service ready.";
+    configureRpcThreadpool(1, true /*callerWillJoin*/);
+
+    status_t status = service->registerAsSystemService();
+    if (status != android::OK) {
+        ALOGE("Cannot register service for Fingerprint HAL(%d).", status);
+        return 1;
+    }
 
     joinRpcThreadpool();
 
-    LOG(ERROR) << "Biometrics 2.3 HAL service failed to join thread pool.";
-    return 1;
+    return 0; // should never get here
 }

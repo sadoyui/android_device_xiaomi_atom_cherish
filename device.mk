@@ -10,6 +10,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Call proprietary blob setup
+$(call inherit-product-if-exists, vendor/xiaomi/atom/atom-vendor.mk)
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 29
 
@@ -66,3 +69,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-V1-ndk_platform.vendor
 
+# Shims
+PRODUCT_PACKAGES += \
+    ImsServiceBase \
+    libshim_vtservice
+
+# Telephony
+PRODUCT_BOOT_JARS += \
+    mediatek-common \
+    mediatek-framework \
+    mediatek-ims-base \
+    mediatek-ims-common \
+    mediatek-telecom-common \
+    mediatek-telephony-base \
+    mediatek-telephony-common

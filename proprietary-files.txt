@@ -60,6 +60,3 @@ framework/mediatek-gwsdv2.jar
 framework/mediatek-services.jar
 framework/mediatek-wfo-legacy.jar
 framework/mediatek-framework-net.jar
-
-# Power-off charging daemon
-bin/charger

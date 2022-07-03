@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_atom.mk
+    $(LOCAL_DIR)/exthm_atom.mk
 
 COMMON_LUNCH_CHOICES := \
-	aosp_atom-user \
-	aosp_atom-userdebug \
-	aosp_atom-eng
+	exthm_atom-user \
+	exthm_atom-userdebug \
+	exthm_atom-eng

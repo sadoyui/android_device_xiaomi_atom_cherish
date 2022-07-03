@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/atom/device.mk)
 
 # Inherit from the PixelExperience configuration.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+$(call inherit-product, vendor/exthm/config/common_full_phone.mk)
 
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 2400
@@ -20,7 +20,7 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOT_ANIMATION_RES := 1080
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := aosp_atom
+PRODUCT_NAME := exthm_atom
 PRODUCT_DEVICE := atom
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := M2004J7AC

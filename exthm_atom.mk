@@ -12,7 +12,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/atom/device.mk)
 
 # Inherit from the PixelExperience configuration.
-$(call inherit-product, vendor/exthm/config/common_full_phone.mk)
 
 # Boot Animation
 TARGET_SCREEN_HEIGHT := 2400

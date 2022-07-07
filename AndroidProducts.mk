@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/exthm_atom.mk
+    $(LOCAL_DIR)/xdroid_atom.mk
 
 COMMON_LUNCH_CHOICES := \
-	exthm_atom-user \
-	exthm_atom-userdebug \
-	exthm_atom-eng
+	xdroid_atom-user \
+	xdroid_atom-userdebug \
+	xdroid_atom-eng

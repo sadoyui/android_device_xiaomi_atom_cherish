@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/xdroid_atom.mk
+    $(LOCAL_DIR)/cherish_atom.mk
 
 COMMON_LUNCH_CHOICES := \
-	xdroid_atom-user \
-	xdroid_atom-userdebug \
-	xdroid_atom-eng
+	cherish_atom-user \
+	cherish_atom-userdebug \
+	cherish_atom-eng

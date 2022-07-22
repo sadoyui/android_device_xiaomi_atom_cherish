@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/cherish_atom.mk
+    $(LOCAL_DIR)/lineage_atom.mk
 
 COMMON_LUNCH_CHOICES := \
-	cherish_atom-user \
-	cherish_atom-userdebug \
-	cherish_atom-eng
+	lineage_atom-user \
+	lineage_atom-userdebug \
+	lineage_atom-eng

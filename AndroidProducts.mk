@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_atom.mk
+    $(LOCAL_DIR)/kscope_atom.mk
 
 COMMON_LUNCH_CHOICES := \
-	lineage_atom-user \
-	lineage_atom-userdebug \
-	lineage_atom-eng
+	kscope_atom-user \
+	kscope_atom-userdebug \
+	kscope_atom-eng
